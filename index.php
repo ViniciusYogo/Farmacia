@@ -24,16 +24,19 @@ require'config.php';
 
 <?php
     //No banco o emai é vinicius@gmail.com e a senha é 123
-    $email=$_POST['inputEmail'];
-    $senha=$_POST['inputSenha']; 
+
+    $email=isset($_POST['inputEmail']) ? $_POST['inputEmail'] : '';;
+    $senha=isset($_POST['inputSenha']) ? $_POST['inputSenha'] : '';; 
 
     $sql = $pdo->prepare("SELECT COUNT(*) FROM usuario WHERE email = :email AND senha = :senha");
     $sql->bindValue(':email',$email);
     $sql->bindValue(':senha',$senha);
-    $sql->execute();
-    $row = $sql->fetch(PDO::FETCH_NUM);
-    if ($row[0] > 0) {
-        header('Location: menu.php');
+    if($senha != '' and $email != ''){
+        $sql->execute();
+        $row = $sql->fetch(PDO::FETCH_NUM);
+        if ($row[0] > 0) {
+            header('Location: menu.php');
+        }
     }
 
     
