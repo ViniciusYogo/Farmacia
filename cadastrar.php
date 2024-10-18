@@ -35,12 +35,14 @@ require 'config.php';
 </html>
 
 <?php
+include 'visualizar.php';
 
-$nomeRemedio=$_POST['inputNome'];
-$preco=$_POST['inputPreco'];
-$quantidade=$_POST['inputQuantidade'];
-$categoria=$_POST['inputCategoria'];
-$validade=$_POST['inputValidade'];
+$nomeRemedio = isset($_POST['inputNome']) ? $_POST['inputNome'] : '';
+$quantidade = isset($_POST['inputQuantidade']) ? $_POST['inputQuantidade'] : '';
+$categoria = isset($_POST['inputCategoria']) ? $_POST['inputCategoria'] : '';
+$preco = isset($_POST['inputPreco']) ? $_POST['inputPreco'] : '';
+$validade = isset($_POST['inputValidade']) ? $_POST['inputValidade'] : '';
+
 
 $sql = $pdo->prepare('INSERT INTO medicamento(nome_Medicamento , preco , quantidade_Disponivel , categoria , data_validade) VALUES(:nomeReme,:preco,:quant,:catego,:vali)');
 

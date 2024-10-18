@@ -13,6 +13,7 @@ require 'config.php';
     <h1>Tela inicial</h1>
 
     <button><a href="cadastrar.php">Cadastrar remédios</a></button>
-    <button>Visualziar remédios</button>
+    <button><a href="visualizar.php">Visualziar remédios</a></button>
+
 </body>
 </html>
