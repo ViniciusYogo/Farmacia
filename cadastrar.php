@@ -54,9 +54,7 @@ $sql->bindValue(':vali',$validade);
 
 if($nomeRemedio != "" and $preco != 0 and $quantidade != 0 and $categoria != "" and $validade != null){
     $sql->execute();
+    header('Location: visualizar.php');
+}
 
-}
-else{
-    echo"espaço vazio";
-}
 ?>
