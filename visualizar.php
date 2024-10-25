@@ -14,6 +14,8 @@ if ($sql->rowCount() > 0) {
 
 <!DOCTYPE html>
 <html lang="pt-Br">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 
 <head>
     <meta charset="UTF-8">
@@ -23,29 +25,45 @@ if ($sql->rowCount() > 0) {
 
 <body>
     <h1>REMEDIOS</h1>
-    <table border="2px">
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Nome do Remédio</th>
-            <th scope="col">Quantidade</th>
-            <th scope="col">Preço</th>
-            <th scope="col">Categoria</th>
-            <th scope="col">Validade</th>
-            <th scope="col">Ação</th>
-        </tr>
-        <?php foreach ($remedio as $remed) : ?>
-            <tr>
-                <td><?php echo $remed['id']; ?></td>
-                <td><?php echo $remed['nome_Medicamento']; ?></td>
-                <td><?php echo $remed['preco']; ?></td>
-                <td><?php echo $remed['quantidade_Disponivel']; ?></td>
-                <td><?php echo $remed['categoria']; ?></td>
-                <td><?php echo $remed['data_validade']; ?></td>
-                <td><a href="excluir.php?id=<?= $remed['id'];?>">Excluir</a></td>
-                <td><a href="editar.php?id=<?= $remed['id'];?>">Editar</a></td>
-            </tr>
-        <?php endforeach; ?>
-    </table>
+    <br>
+    <br>
+    <input type="text" id="inputBusca">
+    <br><br>
+    <div class="table-responsive-sm">
+
+        <table class="table table-bordered table-striped table-hover ">
+            <thead class="thead-dark sticky-top">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome do Remédio</th>
+                    <th scope="col">Quantidade</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Validade</th>
+                    <th scope="col">Ação</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaRemedio">
+                <?php foreach ($remedio as $remed) : ?>
+                    <tr>
+                        <td><?php echo $remed['id']; ?></td>
+                        <td><?php echo $remed['nome_Medicamento']; ?></td>
+                        <td><?php echo $remed['quantidade_Disponivel']; ?></td>
+                        <td><?php echo $remed['preco']; ?></td>
+                        <td><?php echo $remed['categoria']; ?></td>
+                        <td><?php echo $remed['data_validade']; ?></td>
+                        <td><a href="excluir.php?id=<?= $remed['id']; ?>">Excluir</a>
+                            <a href="editar.php?id=<?= $remed['id']; ?>">Editar</a>
+                        </td>
+
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
 </body>
+
+<script src="eventos.js"></script>
+
 
 </html>
