@@ -1,0 +1,70 @@
+
+create database farmacia;
+
+use farmacia;
+
+
+create table if not exists medicamento(
+id int primary key auto_increment,
+imagem_Remedio varchar (100),
+nome_Medicamento varchar(50),
+preco decimal(10,2),
+quantidade_Disponivel int,
+categoria varchar(30),
+data_validade date
+);
+
+create table usuario(
+id int primary key auto_increment,
+email varchar(80),
+senha varchar(30),
+cargo varchar(30)
+);
+
+create table vendas(
+id_Venda int primary key auto_increment
+);
+
+insert into usuario (email, senha,cargo)
+values("vinicius@gmail.com", "123", "Administrador");
+
+select * from medicamento;
+
+INSERT INTO medicamento (imagem_Remedio, nome_Medicamento, preco, quantidade_Disponivel, categoria, data_validade) VALUES
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaXnrYh7cZkyw5EY2XkPjiCSEwUGEHcXivpA&s', 'Paracetamol', 5.50, 100, 'Analgesico', '2025-12-31'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtYyesgSA8cNi-008W2fVjm350m4kNTaLrwg&s', 'Ibuprofeno', 8.75, 200, 'Analgesico', '2026-06-30'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Amoxicilina', 12.00, 50, 'Antibiotico', '2025-08-15'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Paracetamol', 5.50, 100, 'Analgesico', '2025-12-31'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Ibuprofeno', 8.75, 200, 'Analgesico', '2026-06-30'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Amoxicilina', 12.00, 50, 'Antibiotico', '2025-08-15'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Dipirona', 6.25, 75, 'Analgesico', '2024-11-01'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Loratin', 9.90, 150, 'Antialergico', '2026-01-20'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Omeprazol', 14.00, 80, 'Antiacido', '2025-05-10'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Metformina', 10.50, 60, 'Antidiabetico', '2026-02-28'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Simvastatina', 18.00, 30, 'Hipolipemiante', '2025-03-14'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Losartana', 15.75, 40, 'Antihipertensivo', '2026-04-05'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Cetirizina', 11.20, 120, 'Antialergico', '2026-09-15'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Ácido Acetilsalicílico', 6.00, 40, 'Analgésico', '2026-05-15'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Ranitidina', 10.00, 30, 'Antagonista H2', '2025-08-20'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Clopidogrel', 15.00, 25, 'Antiplaquetário', '2026-02-28'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Atorvastatina', 20.00, 35, 'Hipolipemiante', '2026-03-10'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Atenolol', 8.00, 50, 'Antihipertensivo', '2025-12-01'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Fluoxetina', 12.00, 20, 'Antidepressivo', '2024-11-30'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Levetiracetam', 25.00, 30, 'Antiepiléptico', '2025-09-15'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Furosemida', 7.00, 45, 'Diurético', '2026-01-10'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Naproxeno', 9.50, 25, 'Anti-inflamatório', '2025-07-25'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Bromazepam', 11.00, 15, 'Ansiolítico', '2024-04-05'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Cefalexina', 14.00, 40, 'Antibiótico', '2025-10-15'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Metoprolol', 9.00, 30, 'Antihipertensivo', '2025-03-20'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Sertralina', 18.00, 25, 'Antidepressivo', '2026-06-30'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Carbamazepina', 22.00, 20, 'Antiepiléptico', '2025-04-10'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Clonazepam', 13.00, 15, 'Ansiolítico', '2024-12-05'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Pantoprazol', 12.50, 35, 'Antissético', '2026-02-20'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Aspirina', 5.50, 50, 'Analgésico/Antiinflamatório', '2025-09-10'),
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHtgSK8l4gy16iuhfHUtS-UK50Pv3wWWPvHw&s', 'Risperidona', 19.00, 20, 'Antipsicótico', '2026-03-15');
+
+
+
+select * from medicamento;
+
+truncate medicamento;
