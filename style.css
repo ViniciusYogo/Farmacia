@@ -1,0 +1,25 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: aqua;
+}
+
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: red;
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    gap: 5px;
+}
