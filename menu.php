@@ -1,5 +1,15 @@
 <?php
 require 'config.php';
+
+$sql = $pdo->query('SELECT * FROM medicamento');
+
+$remedio = [];
+
+//FETCH_ASSOC é para retornar uma array associativa (Uma arrey que não é um indice 123 e sim podendo ser qualquer coisa.)
+
+if ($sql->rowCount() > 0) {
+    $remedio = $sql->fetchAll(PDO::FETCH_ASSOC);
+}
 ?>
 
 <!DOCTYPE html>
@@ -31,12 +41,29 @@ require 'config.php';
             <button><a href="vender.php">Vender remédios</a></button>
         </div>
     </div>
+    <div class="container">
+        <div class='row'>
+            <?php foreach ($remedio as $remed) : ?>
+                <div class="card" style="width: 18rem;">
+                    <form action="comprar.php" method="post"></form>
+                    <a href="comprar.php?id=<?= $remed['id']; ?>" target="_blank">
+                        <h5 class="card-title"><?php echo $remed['nome_Medicamento']; ?></h5>
+                        <img src="<?php echo $remed['imagem_Remedio']; ?>" class="card-img-top">
+                        <div class="card-body">
+                            <?php echo $remed['nome_Medicamento']; ?>
+                            <?php echo $remed['quantidade_Disponivel']; ?>
+                            <?php echo $remed['preco']; ?>
+                            <?php echo $remed['categoria']; ?>
+                            <?php echo $remed['data_validade']; ?>
+                        </div>
+                    </a>
+                </div>
+                <br>
+            <?php endforeach; ?>
+        </div>
+    </div>
 
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
 

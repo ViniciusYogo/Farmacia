@@ -24,7 +24,7 @@ if ($sql->rowCount() > 0) {
 </head>
 
 <body>
-    <h1>REMEDIOS</h1>
+    <h1><a href="menu.php">REMEDIOS</a></h1>
     <br>
     <br>
     <input type="text" id="inputBusca">
