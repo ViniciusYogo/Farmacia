@@ -19,7 +19,7 @@ $medicamento = $sql->fetch(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://img.myloview.com.br/quadros/farmacia-icone-700-11593425.jpg" type="image/png">
     <link rel="stylesheet" href="comprar.css">
-    <title>Document</title>
+    <title>Farmacia</title>
 </head>
 
 <body>

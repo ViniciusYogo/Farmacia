@@ -21,13 +21,15 @@ if ($sql->rowCount() > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://img.myloview.com.br/quadros/farmacia-icone-700-11593425.jpg" type="image/png">
-    <title>Document</title>
+    <link rel="stylesheet" href="visualizar.css">
+    <title>Farmacia</title>
 </head>
 
 <body>
-    <h1><a href="menu.php">REMEDIOS</a></h1>
+    <h1><a href="menu.php">REMÉDIOS</a></h1>
     <br>
     <br>
+    <h2>Pesquisar:</h2>
     <input type="text" id="inputBusca">
     <br><br>
     <div class="table-responsive-sm">
